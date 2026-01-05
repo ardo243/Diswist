@@ -11,7 +11,7 @@
         android:id="@+id/header_bg"
         android:layout_width="match_parent"
         android:layout_height="330dp"
-        android:background="@drawable/bg_profile_header"
+        android:background="@color/biru"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
@@ -20,8 +20,8 @@
         android:layout_height="24dp"
         android:layout_marginStart="24dp"
         android:layout_marginTop="24dp"
-        android:src="@drawable/ic_back"
-        app:tint="@color/white"
+        android:src="@drawable/ic_arrow_back"
+        app:tint="@color/black"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -118,8 +118,8 @@
                         android:id="@+id/btn_edit_profile"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:background="?attr/selectableItemBackground"
-                        android:drawableStart="@drawable/ic_profile"
+                        android:background="@color/white"
+                        android:drawableStart="@drawable/person"
                         android:drawableEnd="@drawable/ic_chevron_right"
                         android:drawablePadding="16dp"
                         android:gravity="center_vertical"
@@ -127,7 +127,7 @@
                         android:text="Edit Profile"
                         android:textColor="@color/black"
                         android:textStyle="bold"
-                        app:drawableTint="@color/blue_primary" />
+                        app:drawableTint="@color/black" />
 
                     <View android:layout_width="match_parent" android:layout_height="1dp" android:background="#F5F5F5" android:layout_marginHorizontal="16dp"/>
 
@@ -145,7 +145,7 @@
                         android:text="Keranjang Tiket"
                         android:textStyle="bold"
                         android:textColor="@color/black"
-                        app:drawableTint="@color/blue_primary" />
+                        app:drawableTint="@color/black" />
 
                     <View android:layout_width="match_parent" android:layout_height="1dp" android:background="#F5F5F5" android:layout_marginHorizontal="16dp"/>
 
@@ -163,7 +163,7 @@
                         android:text="Pembatalan Tiket"
                         android:textStyle="bold"
                         android:textColor="@color/black"
-                        app:drawableTint="@color/blue_primary" />
+                        app:drawableTint="@color/black" />
 
                     <!-- Ganti Kata Sandi -->
                     <TextView
@@ -179,7 +179,7 @@
                         android:text="Ganti Kata Sandi"
                         android:textStyle="bold"
                         android:textColor="@color/black"
-                        app:drawableTint="@color/blue_primary" />
+                        app:drawableTint="@color/black" />
 
 
 
@@ -224,7 +224,7 @@
                         android:text="Pengaturan"
                         android:textStyle="bold"
                         android:textColor="@color/black"
-                        app:drawableTint="@color/blue_primary" />
+                        app:drawableTint="@color/black" />
 
                     <View android:layout_width="match_parent" android:layout_height="1dp" android:background="#F5F5F5" android:layout_marginHorizontal="16dp"/>
 
@@ -234,7 +234,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:background="?attr/selectableItemBackground"
-                        android:drawableStart="@drawable/ic_info"
+                        android:drawableStart="@drawable/settings"
                         android:drawableEnd="@drawable/ic_chevron_right"
                         android:drawablePadding="16dp"
                         android:gravity="center_vertical"
@@ -242,7 +242,7 @@
                         android:text="Panduan Pengguna"
                         android:textStyle="bold"
                         android:textColor="@color/black"
-                        app:drawableTint="@color/blue_primary" />
+                        app:drawableTint="@color/black" />
 
                     <View android:layout_width="match_parent" android:layout_height="1dp" android:background="#F5F5F5" android:layout_marginHorizontal="16dp"/>
 
@@ -260,7 +260,7 @@
                         android:text="Hapus Akun"
                         android:textStyle="bold"
                         android:textColor="@color/black"
-                        app:drawableTint="@color/blue_primary" />
+                        app:drawableTint="@color/black" />
 
                     <View android:layout_width="match_parent" android:layout_height="1dp" android:background="#F5F5F5" android:layout_marginHorizontal="16dp"/>
 
@@ -278,7 +278,7 @@
                         android:text="Keluar"
                         android:textStyle="bold"
                         android:textColor="#F44336"
-                        app:drawableTint="@color/blue_primary" />
+                        app:drawableTint="@color/black" />
 
                 </LinearLayout>
             </androidx.cardview.widget.CardView>

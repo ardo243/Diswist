@@ -67,8 +67,15 @@ class ActivityHome : AppCompatActivity() {
 
         val navUser = findViewById<android.widget.ImageView>(R.id.nav_user)
         navUser.setOnClickListener {
-            val intent = Intent(this, ProfileActivity::class.java)
-            startActivity(intent)
+            findViewById<android.view.View>(R.id.profile_image).setOnClickListener {
+                ProfileFragment()
+            }
+
+// 2. Tombol User di Bottom Navigation
+            val navUser = findViewById<android.widget.ImageView>(R.id.nav_user)
+            navUser.setOnClickListener {
+                ProfileFragment()
+            }
         }
 
         findViewById<android.view.View>(R.id.nav_fav).setOnClickListener {

@@ -11,7 +11,7 @@
         android:id="@+id/view_header"
         android:layout_width="match_parent"
         android:layout_height="160dp"
-        android:background="@drawable/bg_profile_header"
+        android:background="@color/main_background_blue"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
@@ -21,8 +21,8 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:padding="4dp"
-        android:src="@drawable/ic_back"
-        app:tint="@color/white"
+        android:src="@drawable/ic_arrow_back"
+        app:tint="@color/black"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -31,7 +31,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Panduan Pengguna"
-        android:textColor="@color/white"
+        android:textColor="@color/black"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@id/iv_back"
@@ -60,6 +60,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="@color/white"
                 android:orientation="vertical">
 
                 <TextView
@@ -76,7 +77,7 @@
                     android:layout_height="wrap_content"
                     android:text="1. Pilih destinasi wisata di halaman Beranda.\n2. Klik tombol 'Pesan'.\n3. Pilih tanggal kunjungan dan jumlah tiket.\n4. Pilih titik penjemputan.\n5. Lakukan pembayaran melalui Virtual Account.\n6. Tiket akan muncul setelah pembayaran berhasil."
                     android:textSize="14sp"
-                    android:textColor="#555555"
+                    android:textColor="@color/black"
                     android:layout_marginBottom="24dp"
                     android:lineSpacingExtra="4dp"/>
 

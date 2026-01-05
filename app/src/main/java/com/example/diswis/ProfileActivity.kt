@@ -10,7 +10,7 @@ class ProfileActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        setContentView(R.layout.activity_profile)
+        setContentView(R.layout.fragment_profile)
         
         // Handle Back Button
         findViewById<android.view.View>(R.id.btnBack).setOnClickListener {

@@ -11,7 +11,7 @@
         android:id="@+id/view_header"
         android:layout_width="match_parent"
         android:layout_height="160dp"
-        android:background="@drawable/bg_profile_header"
+        android:background="@color/biru"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
@@ -21,8 +21,8 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:padding="4dp"
-        android:src="@drawable/ic_back"
-        app:tint="@color/white"
+        android:src="@drawable/ic_arrow_back"
+        app:tint="@color/black"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -31,7 +31,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Edit Profile"
-        android:textColor="@color/white"
+        android:textColor="@color/black"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@id/iv_back"
@@ -65,10 +65,10 @@
     <ImageView
         android:layout_width="32dp"
         android:layout_height="32dp"
-        android:background="@drawable/bg_white_circle_transparent"
+        android:background="@color/white"
         android:src="@android:drawable/ic_menu_camera"
         android:padding="6dp"
-        app:tint="@color/blue_primary"
+        app:tint="@color/biru"
         app:layout_constraintBottom_toBottomOf="@id/cv_avatar_container"
         app:layout_constraintEnd_toEndOf="@id/cv_avatar_container" />
     <!-- Note: bg_white_circle_transparent might need creation, or use a shape -->
@@ -88,6 +88,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
+            android:background="@color/white"
             android:padding="24dp">
 
             <TextView
@@ -103,7 +104,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_marginTop="8dp"
-                android:background="@drawable/bg_edit_text"
+                android:background="@color/white"
                 android:hint="John Doe"
                 android:inputType="textPersonName"
                 android:paddingHorizontal="16dp"
@@ -124,7 +125,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_marginTop="8dp"
-                android:background="@drawable/bg_edit_text"
+                android:background="@color/white"
                 android:hint="john.doe@example.com"
                 android:inputType="textEmailAddress"
                 android:paddingHorizontal="16dp"
@@ -145,7 +146,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_marginTop="8dp"
-                android:background="@drawable/bg_edit_text"
+                android:background="@color/white"
                 android:hint="+62 812 3456 7890"
                 android:inputType="phone"
                 android:paddingHorizontal="16dp"
@@ -160,7 +161,7 @@
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:layout_margin="24dp"
-        android:backgroundTint="@color/blue_primary"
+        android:backgroundTint="@color/biru"
         android:text="Simpan Perubahan"
         android:textColor="@color/white"
         android:textStyle="bold"
