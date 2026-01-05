@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F5F5F5">
+
+    <!-- Header Background -->
+    <View
+        android:id="@+id/view_header"
+        android:layout_width="match_parent"
+        android:layout_height="160dp"
+        android:background="@drawable/bg_profile_header"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/iv_back"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:padding="4dp"
+        android:src="@drawable/ic_back"
+        app:tint="@color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_edit_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Edit Profile"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/iv_back"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/iv_back" />
+
+    <!-- Avatar with Badge -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cv_avatar_container"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="100dp"
+        app:cardCornerRadius="50dp"
+        app:cardElevation="0dp"
+        app:cardBackgroundColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/iv_edit_avatar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@android:drawable/ic_menu_gallery"
+            android:background="#EEEEEE"
+            android:scaleType="centerCrop"
+            android:padding="4dp"/>
+    </androidx.cardview.widget.CardView>
+
+    <ImageView
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:background="@drawable/bg_white_circle_transparent"
+        android:src="@android:drawable/ic_menu_camera"
+        android:padding="6dp"
+        app:tint="@color/blue_primary"
+        app:layout_constraintBottom_toBottomOf="@id/cv_avatar_container"
+        app:layout_constraintEnd_toEndOf="@id/cv_avatar_container" />
+    <!-- Note: bg_white_circle_transparent might need creation, or use a shape -->
+
+    <!-- Form Container -->
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="24dp"
+        android:layout_marginTop="24dp"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="4dp"
+        app:cardBackgroundColor="@color/white"
+        app:layout_constraintTop_toBottomOf="@id/cv_avatar_container">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="24dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Nama Lengkap"
+                android:textSize="12sp"
+                android:textColor="#757575"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/et_edit_name"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/bg_edit_text"
+                android:hint="John Doe"
+                android:inputType="textPersonName"
+                android:paddingHorizontal="16dp"
+                android:textColor="@color/black"
+                android:textSize="14sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Email Address"
+                android:textSize="12sp"
+                android:textColor="#757575"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/et_edit_email"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/bg_edit_text"
+                android:hint="john.doe@example.com"
+                android:inputType="textEmailAddress"
+                android:paddingHorizontal="16dp"
+                android:textColor="@color/black"
+                android:textSize="14sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Nomor Telepon"
+                android:textSize="12sp"
+                android:textColor="#757575"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/et_edit_phone"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/bg_edit_text"
+                android:hint="+62 812 3456 7890"
+                android:inputType="phone"
+                android:paddingHorizontal="16dp"
+                android:textColor="@color/black"
+                android:textSize="14sp" />
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <Button
+        android:id="@+id/btn_save"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_margin="24dp"
+        android:backgroundTint="@color/blue_primary"
+        android:text="Simpan Perubahan"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:textSize="16sp"
+        app:cornerRadius="30dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

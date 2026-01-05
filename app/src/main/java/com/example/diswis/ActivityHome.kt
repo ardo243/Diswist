@@ -7,6 +7,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.constraintlayout.widget.ConstraintLayout
 
 class ActivityHome : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -16,12 +17,31 @@ class ActivityHome : AppCompatActivity() {
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
+            
+            // Apply top inset as padding to the profile/greeting container instead of the root
+            val profileCard = findViewById<android.view.View>(R.id.profile_card)
+            val icNotification = findViewById<android.view.View>(R.id.ic_notification)
+            
+            // Adjust the top margin or padding of the elements inside the header
+            val lpProfile = profileCard.layoutParams as ConstraintLayout.LayoutParams
+            lpProfile.topMargin = 32 + systemBars.top // Original 32dp + status bar height
+            profileCard.layoutParams = lpProfile
+            
+            val lpNotification = icNotification.layoutParams as ConstraintLayout.LayoutParams
+            lpNotification.topMargin = systemBars.top // Align with profile card top margin adjustment
+            icNotification.layoutParams = lpNotification
+
+            // Apply bottom inset as padding to the bottom navigation bar
+            val bottomNav = findViewById<android.view.View>(R.id.bottomNav)
+            bottomNav.setPadding(0, 0, 0, systemBars.bottom)
+            
+            // Adjust bottomNav height to accommodate padding if necessary
+            val lpBottomNav = bottomNav.layoutParams
+            lpBottomNav.height = 60.toInt().toPx(this) + systemBars.bottom
+            bottomNav.layoutParams = lpBottomNav
+
             insets
         }
-
-        // Fragment is loaded via FragmentContainerView in XML, no manual transaction needed here
-        // unless you want to replace it dynamically later.
 
         // Setup Categories
         findViewById<LinearLayout>(R.id.btn_destinasi).setOnClickListener {
@@ -55,5 +75,10 @@ class ActivityHome : AppCompatActivity() {
             val intent = Intent(this, com.example.diswis.destinasiharusnya.WishlistActivity::class.java)
             startActivity(intent)
         }
+    }
+    
+    // Helper function to convert dp to px
+    private fun Int.toPx(context: android.content.Context): Int {
+        return (this * context.resources.displayMetrics.density).toInt()
     }
 }

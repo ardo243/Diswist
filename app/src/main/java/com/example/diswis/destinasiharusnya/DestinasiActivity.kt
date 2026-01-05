@@ -12,6 +12,9 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.diswis.R
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowInsetsCompat
+import androidx.constraintlayout.widget.ConstraintLayout
 
 class DestinasiActivity : AppCompatActivity() {
     private lateinit var adapter: DestinationAdapter
@@ -21,6 +24,34 @@ class DestinasiActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_destinasi_harusnya)
+
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
+            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
+            
+            // Adjust header elements
+            val btnBack = findViewById<android.view.View>(R.id.btnBack)
+            val tvTitle = findViewById<android.view.View>(R.id.tvTitle)
+            val headerBg = findViewById<android.view.View>(R.id.headerBg)
+
+            val lpBack = btnBack.layoutParams as androidx.constraintlayout.widget.ConstraintLayout.LayoutParams
+            lpBack.topMargin = 40.toInt().toPx(this) + systemBars.top
+            btnBack.layoutParams = lpBack
+
+            // tvTitle is constrained to btnBack, so it should follow. 
+            // But let's check if we need to adjust the height of headerBg
+            val lpHeader = headerBg.layoutParams
+            lpHeader.height = 100.toInt().toPx(this) + systemBars.top
+            headerBg.layoutParams = lpHeader
+
+            // Adjust bottomNav
+            val bottomNav = findViewById<android.view.View>(R.id.bottomNav)
+            bottomNav.setPadding(0, 0, 0, systemBars.bottom)
+            val lpBottom = bottomNav.layoutParams
+            lpBottom.height = 60.toInt().toPx(this) + systemBars.bottom
+            bottomNav.layoutParams = lpBottom
+
+            insets
+        }
         
         WishlistManager.init(this)
         
@@ -116,5 +147,8 @@ class DestinasiActivity : AppCompatActivity() {
                 mainContent.visibility = View.GONE
             }
         }, 50) 
+    }
+    private fun Int.toPx(context: android.content.Context): Int {
+        return (this * context.resources.displayMetrics.density).toInt()
     }
 }

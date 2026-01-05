@@ -10,6 +10,7 @@
         android:id="@+id/headerLayout"
         android:layout_width="match_parent"
         android:layout_height="100dp"
+
         android:backgroundTint="@color/text_secondary"
         android:paddingTop="280dp"
         android:padding="16dp"

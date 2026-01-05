@@ -22,8 +22,8 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
+            // We don't apply padding to the root anymore to allow full background
+            // The content already has enough margins (e.g. 120dp top, 100dp bottom)
             insets
         }
     }

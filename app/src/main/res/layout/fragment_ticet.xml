@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#4FC3F7"
+    android:padding="24dp">
+
+    <ImageView
+        android:id="@+id/iv_back"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:background="#20FFFFFF"
+        android:padding="8dp"
+        android:src="@drawable/ic_back"
+        app:tint="@color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="ContentDescription" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nota Pembayaran"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/iv_back"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/iv_back" />
+
+    <!-- Ticket Card Container -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_ticket"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        app:cardCornerRadius="24dp"
+        app:cardElevation="8dp"
+        app:cardBackgroundColor="@color/white"
+        app:layout_constraintTop_toBottomOf="@id/iv_back"
+        app:layout_constraintEnd_toEndOf="match_parent"
+        app:layout_constraintStart_toStartOf="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Success Header -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:paddingTop="24dp"
+                android:paddingBottom="8dp">
+
+                <ImageView
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:src="@android:drawable/checkbox_on_background"
+                    app:tint="#4CAF50"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Pembayaran Berhasil"
+                    android:textColor="#4CAF50"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:layout_marginTop="8dp"/>
+
+                <TextView
+                    android:id="@+id/tv_transaction_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="30 Des 2025, 14:30 WIB"
+                    android:textColor="#757575"
+                    android:textSize="12sp"
+                    android:layout_marginTop="4dp"/>
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#EEEEEE"
+                android:layout_marginHorizontal="24dp"
+                android:layout_marginVertical="8dp"/>
+
+            <!-- Top Part: Details -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="24dp">
+
+                <TextView
+                    android:id="@+id/tv_ticket_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Candi Prambanan"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"
+                    app:layout_constraintTop_toTopOf="parent"/>
+
+                <TextView
+                    android:id="@+id/tv_ticket_location"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="Kabupaten Magelang, Jawa Tengah"
+                    android:textSize="12sp"
+                    android:textColor="#757575"
+                    app:layout_constraintTop_toBottomOf="@id/tv_ticket_title"/>
+
+                <LinearLayout
+                    android:id="@+id/ll_info_grid"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:orientation="horizontal"
+                    android:baselineAligned="false"
+                    app:layout_constraintTop_toBottomOf="@id/tv_ticket_location">
+
+                    <!-- Date -->
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Tanggal"
+                            android:textSize="12sp"
+                            android:textColor="#9E9E9E"/>
+                        <TextView
+                            android:id="@+id/tv_ticket_date"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:text="30 Des 2025"
+                            android:textStyle="bold"
+                            android:textColor="@color/black"/>
+                    </LinearLayout>
+
+                    <!-- Person -->
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Orang"
+                            android:textSize="12sp"
+                            android:textColor="#9E9E9E"/>
+                        <TextView
+                            android:id="@+id/tv_ticket_count"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:text="2 Orang"
+                            android:textStyle="bold"
+                            android:textColor="@color/black"/>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_time_id"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:orientation="horizontal"
+                    android:baselineAligned="false"
+                    app:layout_constraintTop_toBottomOf="@id/ll_info_grid">
+
+                    <!-- Time -->
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Pukul"
+                            android:textSize="12sp"
+                            android:textColor="#9E9E9E"/>
+                        <TextView
+                            android:id="@+id/tv_ticket_time"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:text="08.00 WIB"
+                            android:textStyle="bold"
+                            android:textColor="@color/black"/>
+                    </LinearLayout>
+
+                    <!-- ID -->
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Booking ID"
+                            android:textSize="12sp"
+                            android:textColor="#9E9E9E"/>
+                        <TextView
+                            android:id="@+id/tv_ticket_id"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:text="#TW16223"
+                            android:textStyle="bold"
+                            android:textColor="@color/black"/>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <!-- Pickup Point -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:orientation="vertical"
+                    app:layout_constraintTop_toBottomOf="@id/ll_time_id">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Titik Penjemputan"
+                        android:textSize="12sp"
+                        android:textColor="#9E9E9E"/>
+                    <TextView
+                        android:id="@+id/tv_ticket_pickup"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:text="-"
+                        android:textStyle="bold"
+                        android:textColor="@color/black"/>
+                </LinearLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#EEEEEE"
+                android:layout_marginHorizontal="0dp"
+                android:layerType="software"
+                android:layout_margin="0dp"/>
+
+            <!-- Bottom Part: Total Paid -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:background="#FAFAFA"
+                android:padding="24dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Total Bayar"
+                    android:textSize="14sp"
+                    android:textColor="#757575"/>
+
+                <TextView
+                    android:id="@+id/tv_receipt_total_amount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Rp 450.000"
+                    android:textSize="24sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/blue_primary"
+                    android:layout_marginTop="4dp"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <Button
+        android:id="@+id/btn_done"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_margin="24dp"
+        android:backgroundTint="#FFFFFF"
+        android:text="Kembali ke Beranda"
+        android:textColor="#4FC3F7"
+        android:textStyle="bold"
+        android:textSize="16sp"
+        app:cornerRadius="30dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

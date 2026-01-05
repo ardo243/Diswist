@@ -16,6 +16,7 @@
     <View
         android:id="@+id/headerBg"
         android:layout_width="match_parent"
+        android:backgroundTint="@color/white"
         android:layout_height="100dp"
         android:background="@drawable/bg_header_white_curve"
         app:layout_constraintTop_toTopOf="parent"
