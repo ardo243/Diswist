@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="main_bg">#88D4DF</color>
+    <!-- biru muda polos -->
+    <color name="nav_bg">#EFEFEF</color> <!-- abu bottom nav -->
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+</resources>

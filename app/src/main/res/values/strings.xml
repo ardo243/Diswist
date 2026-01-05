@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Diswis</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_diswist">Diswist</string>
+    <string name="desc_diswist">Temukan Destinasi wisata kuliner\ndan paket wisata tour terbaik di yogyakarta</string>
+    <string name="btn_masuk">Masuk</string>
+    <string name="btn_daftar">Daftar</string>
+</resources>
